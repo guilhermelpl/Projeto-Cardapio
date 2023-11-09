@@ -56,16 +56,3 @@ export function CreateModal({ closeModal }: ModalProps){
         </div>
     )
 }
-
-// import { useFoodDataMutate } from '../../hooks/useFoodDataMutate';
-// import { FoodData } from '../../interface/FoodData';
-// const { mutate } = useFoodDataMutate();
-// function handleSubmit() {
-//     const foodData: FoodData = {
-//         title, 
-//         price,
-//         image
-//     }
-//     mutate(foodData);
-//     closeModal();
-// }

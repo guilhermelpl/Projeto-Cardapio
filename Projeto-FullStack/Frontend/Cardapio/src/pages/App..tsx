@@ -19,7 +19,7 @@ export function App() {
       <div className='container'>
         <h1>Cardápio</h1>
         <div className="card-grid">
-          {data?.map((item, index) => <Card key={index} price={item.price} title={item.title} image={item.image} index={index} />
+          {data?.map((item, index) => <Card key={index} price={item.price} title={item.title} image={item.image} id={item?.id}/>
           )}
         </div>
         {show && <CreateModal closeModal={handleOpenModal} />}

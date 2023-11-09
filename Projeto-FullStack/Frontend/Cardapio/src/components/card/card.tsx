@@ -5,22 +5,24 @@ import { BASE_URL } from '../../utils'
 import trash from '../../../public/image/lixeira.png'
 
 interface CardProps {
-    index: number,
+    id?: number,
     price: number,
     title: string,
     image: string
 }
 
-export function Card({ price, title, image, index }: CardProps) {
+export function Card({ id, price, title, image }: CardProps) {
 
     function deleteFood() {
-        axios.delete(BASE_URL + `/food/${index + 1}`)
+        axios.delete(BASE_URL + `/food/${id}`).then(() => {
+            window.location.reload()
+        })
     }
 
     return (
         <>
             <div className="card">
-                <img onClick={() => console.log(index + 1)} className="trash" src={trash} alt="" />
+                <img onClick={() => deleteFood()} className="trash" src={trash} alt="" />
                 <img src={image} alt={title} />
                 <h2>{title}</h2>
                 <p><b>Valor: {price}$</b></p>
